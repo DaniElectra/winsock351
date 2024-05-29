@@ -1,0 +1,63 @@
+LIBRARY ws2_32
+DESCRIPTION "Winsock2 compatibility layer for Windows NT 3.51"
+EXPORTS
+	accept=wsock32.accept @1
+	bind=wsock32.bind @2
+	closesocket=wsock32.closesocket @3
+	connect=wsock32.connect @4
+	getpeername=wsock32.getpeername @5
+	getsockname=wsock32.getsockname @6
+	getsockopt=WINSOCK351_getsockopt @7
+	htonl=wsock32.htonl @8
+	htons=wsock32.htons @9
+	ioctlsocket=WINSOCK351_ioctlsocket @10
+	inet_addr=wsock32.inet_addr @11
+	inet_ntoa=wsock32.inet_ntoa @12
+	listen=wsock32.listen @13
+	ntohl=wsock32.ntohl @14
+	ntohs=wsock32.ntohs @15
+	recv=wsock32.recv @16
+	recvfrom=wsock32.recvfrom @17
+	select=WINSOCK351_select @18
+	send=wsock32.send @19
+	sendto=wsock32.sendto @20
+	setsockopt=WINSOCK351_setsockopt @21
+	shutdown=wsock32.shutdown @22
+	socket=wsock32.socket @23
+	WSACloseEvent=WINSOCK351_WSACloseEvent @45
+	WSACreateEvent=WINSOCK351_WSACreateEvent @50
+	gethostbyaddr=wsock32.gethostbyaddr @51
+	gethostbyname=wsock32.gethostbyname @52
+	getprotobyname=wsock32.getprotobyname @53
+	getprotobynumber=wsock32.getprotobynumber @54
+	getservbyname=wsock32.getservbyname @55
+	getservbyport=wsock32.getservbyport @56
+	gethostname=wsock32.gethostname @57
+	WSAEnumNetworkEvents=WINSOCK351_WSAEnumNetworkEvents @64
+	WSAEventSelect=WINSOCK351_WSAEventSelect @67
+	WSAIoctl=WINSOCK351_WSAIoctl @78
+	WSAResetEvent=WINSOCK351_WSAResetEvent @95
+	WSASetEvent=WINSOCK351_WSASetEvent @100
+	WSAAsyncSelect=wsock32.WSAAsyncSelect @101
+	WSAAsyncGetHostByAddr=wsock32.WSAAsyncGetHostByAddr @102
+	WSAAsyncGetHostByName=wsock32.WSAAsyncGetHostByName @103
+	WSAAsyncGetProtoByNumber=wsock32.WSAAsyncGetProtoByNumber @104
+	WSAAsyncGetProtoByName=wsock32.WSAAsyncGetProtoByName @105
+	WSAAsyncGetServByPort=wsock32.WSAAsyncGetServByPort @106
+	WSAAsyncGetServByName=wsock32.WSAAsyncGetServByName @107
+	WSACancelAsyncRequest=wsock32.WSACancelAsyncRequest @108
+	WSASetBlockingHook=wsock32.WSASetBlockingHook @109
+	WSAUnhookBlockingHook=wsock32.WSAUnhookBlockingHook @110
+	WSAGetLastError=wsock32.WSAGetLastError @111
+	WSASetLastError=wsock32.WSASetLastError @112
+	WSACancelBlockingCall=wsock32.WSACancelBlockingCall @113
+	WSAIsBlocking=wsock32.WSAIsBlocking @114
+	WSAStartup=WINSOCK351_WSAStartup @115
+	WSACleanup=WINSOCK351_WSACleanup @116
+	WSAWaitForMultipleEvents=WINSOCK351_WSAWaitForMultipleEvents @124
+
+	__WSAFDIsSet=wsock32.__WSAFDIsSet @151
+	freeaddrinfo=WINSOCK351_freeaddrinfo @175
+	getaddrinfo=WINSOCK351_getaddrinfo @176
+
+	WEP=wsock32.WEP @500
