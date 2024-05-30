@@ -13,7 +13,7 @@ void DebugLog(const char* fmt, ...) {
 	MessageBox(NULL, buf, "WINSOCK351", 0);
 }
 #else
-#define DebugLog(const char* fmt, ...)
+#define DebugLog
 #endif
 
 int WSAAPI WINSOCK351_getsockopt(SOCKET s, int level, int optname, char* optval, int* optlen) {
