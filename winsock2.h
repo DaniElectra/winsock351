@@ -6,16 +6,26 @@
 #define WSA_WAIT_FAILED ((DWORD)-1L)
 
 typedef unsigned int GROUP;
+typedef ULONG SERVICETYPE;
 
 typedef struct _WSABUF {
     u_long      len;     /* the length of the buffer */
     char FAR *  buf;     /* the pointer to the buffer */
 } WSABUF, FAR * LPWSABUF;
 
-#include <qos.h>
+typedef struct _flowspec {
+    ULONG       TokenRate;              /* In Bytes/sec */
+    ULONG       TokenBucketSize;        /* In Bytes */
+    ULONG       PeakBandwidth;          /* In Bytes/sec */
+    ULONG       Latency;                /* In microseconds */
+    ULONG       DelayVariation;         /* In microseconds */
+    SERVICETYPE ServiceType;
+    ULONG       MaxSduSize;             /* In Bytes */
+    ULONG       MinimumPolicedSize;     /* In Bytes */
 
-typedef struct _QualityOfService
-{
+} FLOWSPEC, *PFLOWSPEC, * LPFLOWSPEC;
+
+typedef struct _QualityOfService {
     FLOWSPEC      SendingFlowspec;       /* the flow spec for data sending */
     FLOWSPEC      ReceivingFlowspec;     /* the flow spec for data receiving */
     WSABUF        ProviderSpecific;      /* additional provider specific stuff */

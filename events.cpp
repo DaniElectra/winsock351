@@ -94,18 +94,18 @@ int StartupEvents() {
 	// invisible window to receive those messages
 	// HWND_MESSAGE didn't exist on NT 3.51 so we have to do it this way
 	WNDCLASS wc; 
- 
-    // Register the main window class
-    wc.style = 0; 
-    wc.lpfnWndProc = (WNDPROC)EventsWndProc; 
-    wc.cbClsExtra = 0; 
-    wc.cbWndExtra = 0; 
-    wc.hInstance = events_instance; 
-    wc.hIcon = LoadIcon(NULL, IDI_APPLICATION); 
-    wc.hCursor = LoadCursor(NULL, IDC_ARROW); 
-    wc.hbrBackground = NULL; 
-    wc.lpszMenuName =  NULL; 
-    wc.lpszClassName = events_window_name;
+
+	// Register the main window class
+	wc.style = 0; 
+	wc.lpfnWndProc = (WNDPROC)EventsWndProc; 
+	wc.cbClsExtra = 0; 
+	wc.cbWndExtra = 0; 
+	wc.hInstance = events_instance; 
+	wc.hIcon = LoadIcon(NULL, IDI_APPLICATION); 
+	wc.hCursor = LoadCursor(NULL, IDC_ARROW); 
+	wc.hbrBackground = NULL; 
+	wc.lpszMenuName =  NULL; 
+	wc.lpszClassName = events_window_name;
 	RegisterClass(&wc);
 	events_window = CreateWindow(events_window_name, NULL, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL);
 
