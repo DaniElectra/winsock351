@@ -1,0 +1,37 @@
+# Adapted from https://github.com/itsmattkc/dotnet9x/blob/master/.github/workflows/ci.yml
+name: Build - MSVC6 Debug
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/checkout@v3
+      with:
+        repository: 'itsmattkc/msvc600'
+        path: msvc600
+
+    - name: Build winsock351
+      shell: cmd
+      run: |
+        call .\msvc600\VC98\bin\VCVARS32.BAT x86
+        nmake /f winsock351.mak CFG="winsock351 - Win32 Debug"
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: winsock351
+        path: |
+          Debug/ws2_32.dll
+          Debug/ws2_32.lib
+          Debug/ws2_32.pdb

@@ -1,4 +1,5 @@
-name: Build
+# Adapted from https://github.com/itsmattkc/dotnet9x/blob/master/.github/workflows/ci.yml
+name: Build - MSVC6 Release
 
 on:
   push:
@@ -29,6 +30,8 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@master
       with:
-        name: setup
+        name: winsock351
         path: |
           Release/ws2_32.dll
+          Release/ws2_32.lib
+          Release/ws2_32.pdb
