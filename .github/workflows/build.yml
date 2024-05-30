@@ -30,7 +30,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@master
       with:
-        name: winsock351
+        name: winsock351-msvc6-release
         path: |
           Release/ws2_32.dll
           Release/ws2_32.lib
@@ -41,7 +41,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
     - uses: actions/checkout@v3
       with:
         repository: 'itsmattkc/msvc600'
@@ -56,7 +56,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@master
       with:
-        name: winsock351
+        name: winsock351-msvc6-debug
         path: |
           Debug/ws2_32.dll
           Debug/ws2_32.lib
