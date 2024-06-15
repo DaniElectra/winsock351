@@ -11,6 +11,7 @@ void DebugLog(const char* fmt, ...) {
 	va_end(args);
 
 	MessageBox(NULL, buf, "WINSOCK351", 0);
+	delete buf;
 }
 #else
 #define DebugLog
@@ -28,8 +29,7 @@ int WSAAPI WINSOCK351_ioctlsocket(SOCKET s, long cmd, u_long* argp) {
 	return ioctlsocket(s, cmd, argp);
 }
 
-int WSAAPI WINSOCK351_select(int nfds, fd_set* readfds, fd_set* writefds, fd_set* exceptfds, const timeval* timeout)
- {
+int WSAAPI WINSOCK351_select(int nfds, fd_set* readfds, fd_set* writefds, fd_set* exceptfds, const timeval* timeout) {
 	DebugLog("select: nfds: %d, timeout: %d", nfds, timeout != NULL ? timeout->tv_sec * 1000000 + timeout->tv_usec : 0);
 	return select(nfds, readfds, writefds, exceptfds, timeout);
 }
