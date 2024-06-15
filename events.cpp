@@ -97,7 +97,7 @@ int StartupEvents() {
 
 	// Register the main window class
 	wc.style = 0; 
-	wc.lpfnWndProc = (WNDPROC)EventsWndProc; 
+	wc.lpfnWndProc = EventsWndProc; 
 	wc.cbClsExtra = 0; 
 	wc.cbWndExtra = 0; 
 	wc.hInstance = events_instance; 
